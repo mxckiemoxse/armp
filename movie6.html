@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMP: Ratings, Recommended and Reviews</title>
+    <link rel="icon" href="img/armp.ico" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(img/BG2.jpg); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: rgb(43, 41, 41);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(43, 41, 41);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .header .home-icon img {
+            width: 175px;
+            height: 125px;
+            cursor: pointer;
+        }
+        .header .search-bar {
+            flex-grow: 1;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .header .search-bar input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 5px;
+            font-size: 24px;
+        }
+        .header .search-bar button {
+            color: white;
+            background-color: #333;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .header .search-bar button img {
+            width: 40px;
+            height: 40px;
+        }
+        .header .contact-link {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .header .contact-link img {
+            width: 120px;
+            height: 120px;
+            margin-right: 8px;
+        }
+        .taskbar {
+            display: flex;
+            background-color: #f1f1f1;
+            padding: 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .taskbar button {
+            flex: 1;
+            border: none;
+            background-color: #fff;
+            padding: 15px 0;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .taskbar button.active {
+            background-color: #333;
+            color: white;
+        }
+        .taskbar button:hover {
+            background-color: #eee;
+        }
+        .movie-bar {
+            background: linear-gradient(90deg, #7dc9e7, #006999);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .movie-bar span {
+            display: block; 
+            font-weight: normal; 
+            font-size: 24px;
+            color: #f0e6e6;
+        }
+        .content {
+            display: flex;
+            margin-top: 20px;
+            align-items: flex-start;
+        }
+        .image-container {
+            flex: 1;
+            max-width: 250px;
+            margin-right: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .text-container {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+        }
+        .synopsis {
+            font-size: 24px;
+            line-height: 1.5;
+            color: #aaaaaa;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgb(73, 73, 73);
+            box-shadow: 0 0 10px rgba(37, 29, 29, 0.1);
+        }
+        .rating-banner {
+            font-size: 40px;
+            color: #ffffff;
+            background: linear-gradient(90deg, #7dc9e7, #006999);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgb(248, 248, 248);
+        }
+        .trailer {
+            text-align: center;
+        }
+        .trailer iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .image-container {
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="project1.html" class="home-icon">
+                <img src="img/armp.ico" alt="Home">
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="หาหนังเลย!!">
+                <button type="submit">
+                    <img src="img/search.png" alt="Search">
+                </button>
+            </div>
+            <a href="https://www.instagram.com/_miiiiiiiiiiiick/" class="contact-link">
+                <img src="img/mick.jpg" alt="Contact">
+            <a href="https://www.instagram.com/prompt_perty" class="contact-link">
+                <img src="img/prompt.png" alt="Contact">
+            <a href="https://www.instagram.com/__plyyyyb" class="contact-link">
+                <img src="img/plyb.jpg" alt="Contact">
+                </a>
+        </div>
+        
+        <div class="taskbar">
+            <button onclick="window.location.href='project1.html'">HOMEPAGE</button>
+            <button onclick="window.location.href='project2.html'">2024</button>
+            <button class="active" onclick="window.location.href='project3.html'">2023</button>
+            <button onclick="window.location.href='project4.html'">2022</button>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="movie-bar">
+            Deadpool & Wolverine
+            <span>Directed by Shawn Levy</span>
+        </div> 
+        <div class="content">
+            <div class="image-container">
+                <img src="img/daw.jpg" alt="Oppenheimer Movie">
+            </div>
+            <div class="text-container">
+        <div class="synopsis">
+            <strong>เรื่องย่อ:</strong> 
+            Deadpool & Wolverine เป็นเรื่องราวที่นำเสนอการผจญภัยของเดดพูลและวูลเวอรีน ที่ต้องร่วมมือกันเผชิญหน้ากับศัตรูที่ทรงพลังในโลกซูเปอร์ฮีโร่ ขณะที่พวกเขาต่อสู้เพื่อปกป้องผู้บริสุทธิ์จากภัยคุกคามทั้งหลาย เดดพูลใช้ความขบขันและวิธีการที่ไร้ระเบียบของเขา ในขณะที่วูลเวอรีนใช้ความสามารถที่เหนือมนุษย์และความมุ่งมั่นในการต่อสู้ เรื่องราวเต็มไปด้วยการกระทำที่เข้มข้นและความฮา โดยสะท้อนให้เห็นถึงความสัมพันธ์ที่ซับซ้อนระหว่างฮีโร่ทั้งสอง.
+        </div>
+        &nbsp;&nbsp;&nbsp;
+                <div class="rating-banner">
+                    Rating : 7.9/10
+                </div>
+            </div>
+        </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="trailer">
+            <iframe src="https://www.youtube.com/embed/73_1biulkYk" allowfullscreen></iframe>
+        </div>
+        
+        <div class="footer">
+            &copy; 2024 Movie Database
+        </div>
+    </div>
+</body>
+</html>
